@@ -5,47 +5,53 @@ This project explores associations between somatic gene mutations and clinical o
 ## Project Summary
 
 - 50 genes (binary: mutated = 1, wild-type = 0)
-- 4 clinical outcomes:
-  - exitus (survival status)
-  - Intervalo_libre_pt (response to chemotherapy)
-  - cx_primaria_o_intervalo (surgery type)
-  - resultado_citorreduccion (cytoreduction outcome)
+- 4 clinical outcomes (all binary: 0 = no, 1 = yes):
+  - `survival_status` – patient survival
+  - `chemo_response` – response to chemotherapy
+  - `surgery_type` – primary vs. interval surgery
+  - `cytoreduction_outcome` – outcome of cytoreductive surgery
 
-Note: The original dataset is not included due to data sharing restrictions.
+> **Note**: The original clinical-genomic dataset is not included due to data-sharing restrictions.
 
 ## Methods
 
-- Data cleaning and conversion of variables to binary format
-- Univariate statistical testing (Fisher's exact test)
-- Multivariate logistic regression with clinical covariates
-- Clustering and visualization using ComplexHeatmap
+- Data cleaning: removed genes with no mutations; converted clinical variables to binary
+- Statistical analysis:
+  - Univariate testing via Fisher's exact test
+  - Multivariate logistic regression including clinical covariates
+- Clustering & visualization:
+  - Mutation heatmap with hierarchical clustering using the ComplexHeatmap package
+  - Clinical outcomes annotated per patient
 
 ## Results
 
-- No statistically significant associations were found after FDR correction.
-- Exploratory heatmap analysis highlighted possible gene clusters related to clinical variables.
-- Genes such as ERBB4, TP53, FLT3, and CSF1R showed patterns worth further exploration.
+- No statistically significant gene-outcome associations after FDR correction
+- Exploratory heatmaps showed visual mutation patterns that may relate to outcomes
+- Genes such as **ERBB4**, **TP53**, **FLT3**, and **CSF1R** showed interesting clustering with clinical labels
 
-These findings align with internal collaborator observations and can be used as a foundation for hypothesis-driven follow-up studies.
+These results are consistent with internal findings by collaborators and may support further hypothesis-driven studies.
 
-## Files
+## Repository Contents
 
-- `ovarian_cancer_fishers.R`: Fisher’s exact test for each gene vs. clinical outcomes
-- `ovarian_cancer_multivariate_logreg.R`: Logistic regression models adjusted for clinical variables
-- `ovarian_cancer_complexheatmap.R`: Heatmap visualization and clustering using ComplexHeatmap
-- `heatmap_mutation_exploration.png`: Final visual showing patient clusters and mutation patterns
+- `ovarian_cancer_fishers.R` – Fisher’s exact test for each gene vs. clinical outcomes  
+- `ovarian_cancer_multivariate_logreg.R` – Logistic regression adjusting for other clinical variables  
+- `ovarian_cancer_complexheatmap.R` – Mutation heatmap and clustering visualization  
+- `heatmap_mutation_exploration.png` – Output heatmap figure showing gene-patient mutation matrix  
 
 ## Requirements
 
-- R (>= 4.0)
-- Packages: ComplexHeatmap, circlize, ggplot2, stats
+- R version 4.0 or higher
+- R packages:
+  - `ComplexHeatmap`
+  - `circlize`
+  - `ggplot2`
+  - Base `stats` package
 
 ## Author
-James Jacob
-jamesbwile@gmail.com
-MSc Bioinformatics, University of Nairobi
-Erasmus+ Research Intern – CEU Spain
 
+**James Jacob Wabwile**  
+MSc Bioinformatics, University of Nairobi  
+Erasmus+ Research Intern – CEU, Spain  
+📧 jamesbwile@gmail.com  
 
-For questions or data access, please contact me through email.
-
+For questions, collaboration, or access to the dataset (with permission), feel free to reach out via email.
