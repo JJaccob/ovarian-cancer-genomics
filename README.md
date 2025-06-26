@@ -35,7 +35,7 @@ These results are consistent with internal findings by collaborators and may sup
 
 - `ovarian_cancer_fishers.R` – Fisher’s exact test for each gene vs. clinical outcomes  
 - `ovarian_cancer_multivariate_logreg.R` – Logistic regression adjusting for other clinical variables  
-- `ovarian_cancer_complexheatmap.R` – Mutation heatmap and clustering visualization  
+- `ovarian_cancer_complexheatmap.R` – Mutation heatmap and clustering visualisation  
 - `heatmap_mutation_exploration.png` – Output heatmap figure showing gene-patient mutation matrix  
 
 ## Requirements
@@ -52,6 +52,6 @@ These results are consistent with internal findings by collaborators and may sup
 **James Jacob Wabwile**  
 MSc Bioinformatics, University of Nairobi  
 Erasmus+ Research Intern – CEU, Spain  
-📧 jamesbwile@gmail.com  
+jamesbwile@gmail.com  
 
 For questions, collaboration, or access to the dataset (with permission), feel free to reach out via email.
